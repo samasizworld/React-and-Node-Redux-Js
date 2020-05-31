@@ -4,6 +4,7 @@ const config =require('config');
 const router =express.Router();
 const authMiddleware =require('../../middleware/auth');
 const Profile =require('../../models/Profile');
+const Post=require('../../models/Post');
 const {check,validationResult}=require('express-validator');
 const User = require('../../models/User');
 
@@ -144,11 +145,13 @@ router
     authMiddleware,
      async (req,res)=>{
     try {
-        //@todos -remove user post
+        //remove  user post
+        await Post.deleteMany({user:req.user.id});
+
         //remove profile
         await Profile.findOneAndRemove({user:req.user.id});
         // remove user
-        await Profile.findOneAndRemove({_id:req.user.id});
+        await User.findOneAndRemove({_id:req.user.id});
         res.json({msg:'User Deleted'});
         
     } catch (err) {
