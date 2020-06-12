@@ -10,6 +10,7 @@ const token =req.header('x-auth-token');
 if(!token){
     res.status(401).json({msg:'Authorization denied due to no token'});
 }
+else{
 //Verify token
 try {
     const decoded =jwt.verify(token,config.get('jwtSecret'));
@@ -20,4 +21,5 @@ try {
     
 }
 
-};
+}}
+;
