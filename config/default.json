@@ -1,6 +1,6 @@
 {
-    "mongoURI":"mongodb+srv://kiwi:1234@kiwi-1snds.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret":"mysecrettoken",
-    "githubClientId" :"33e1f11d1b7f44eb5738",
-    "githubSecretId" :"ef18b97f9e6ddf5974a60f0a35df6a203427d840"
+  "mongoURI": "mongodb+srv://kiwi:1234@kiwi-1snds.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "33e1f11d1b7f44eb5738",
+  "githubSecretId": "ef18b97f9e6ddf5974a60f0a35df6a203427d840"
 }
